@@ -10,13 +10,13 @@ var opts = {
   reopen: true,
   del: true,
   truncate: false,
-  size: false,
+  size: true,
   content: false,
   dir: '/tmp/random-pause-test'
 }
 
 randomTest(function (filename, opts2, callback) {
-  var storage = randomFile(opts.dir + '/' + filename)
+  var storage = randomFile(opts.dir + '/' + filename, opts2)
   callback(pauseWrap(storage))
 }, opts)
 
